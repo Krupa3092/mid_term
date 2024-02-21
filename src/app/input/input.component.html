@@ -1,1 +1,15 @@
-<p>input works!</p>
+<form (ngSubmit)="onSubmit()">
+  <label for="model">Processor Model:</label>
+  <input id="model" [(ngModel)]="model" name="model" required>
+  <br>
+  <label>Processor Manufacturer:</label>
+  <div *ngFor="let manufacturer of manufacturers">
+    <input type="radio" [(ngModel)]="manufacturerSelected" [value]="manufacturer">
+    <label>{{ manufacturer }}</label>
+  </div>
+  <br>
+  <label for="compatibility">Windows 11 Compatibility:</label>
+  <input type="checkbox" [(ngModel)]="compatibility">
+  <br>
+  <button type="submit">Submit</button>
+</form>

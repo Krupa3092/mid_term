@@ -1,1 +1,6 @@
-<p>output works!</p>
+<h2>Processor Information</h2>
+<p>Model: {{ model }}</p>
+<p>Manufacturer: {{ manufacturer }}</p>
+<p>Windows 11 Compatibility: {{ compatibility ? 'Yes' : 'No' }}</p>
+<br>
+<button (click)="goBack()">Go Back</button>
