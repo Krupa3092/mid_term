@@ -1,26 +1,21 @@
-
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
 <style>
 
 
 </style>
 
 <main class="main">
-  <div class="form">
-    <form (ngSubmit)="onSubmit()">
-      <label for="model">Processor Model:</label>
-      <input id="model" [(ngModel)]="model" name="model" required>
-      <br>
-      <label>Processor Manufacturer:</label>
-      <div *ngFor="let manufacturer of manufacturers">
-        <input type="radio" [(ngModel)]="manufacturerSelected" [value]="manufacturer">
-        <label>{{ manufacturer }}</label>
-      </div>
-      <br>
-      <label for="compatibility">Windows 11 Compatibility:</label>
-      <input type="checkbox" [(ngModel)]="compatibility">
-      <br>
-      <button type="submit">Submit</button>
-    </form>
+  <div ng-controller="MainController">
+    <app-header></app-header>
+    <div ng-if="currentPage === 'input'">
+      <app-input></app-input>
+    </div>
+    <div ng-if="currentPage === 'output'">
+      <app-output></app-output>
+    </div>
+    <app-footer></app-footer>
   </div>
 </main>
 

@@ -16,9 +16,9 @@ export class OutputComponent implements OnInit {
 
   ngOnInit() {
     const state = this.route.snapshot.data;
-    this.model = state.model;
-    this.manufacturer = state.manufacturer;
-    this.compatibility = state.compatibility;
+    this.model = state['model'];
+    this.manufacturer = state['manufacturer'];
+    this.compatibility = state['compatibility'];
   }
 
   goBack() {
